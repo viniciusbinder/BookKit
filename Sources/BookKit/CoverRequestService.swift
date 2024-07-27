@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum CoverRequestError: Error {
+public enum CoverRequestError: Error {
     case invalidCoverURL
     case emptyBookId
     case invalidBookId
 }
 
-protocol CoverRequestService {
+public protocol CoverRequestService {
     func getCoverURL(bookId: String) throws -> URL
 }

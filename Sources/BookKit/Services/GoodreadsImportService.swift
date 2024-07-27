@@ -7,8 +7,10 @@
 
 import Foundation
 
-class GoodreadsImportService {
+public class GoodreadsImportService {
     private let parser = CSVParser()
+
+    public init() {}
 
     func parseBook(
         _ row: [String: String],
@@ -45,6 +47,9 @@ class GoodreadsImportService {
             }
         }
 
+        book.isbn?.removeFirst()
+        book.isbn13?.removeFirst()
+
         return book
     }
 
@@ -77,7 +82,7 @@ class GoodreadsImportService {
 }
 
 extension GoodreadsImportService: BookImportService {
-    func importBooks(fileURL: URL?, attributesToInclude: [PartialKeyPath<Book>]) throws -> [Book] {
+    public func importBooks(fileURL: URL?, attributesToInclude: [PartialKeyPath<Book>]) throws -> [Book] {
         guard let fileURL = fileURL else {
             throw BookImportError.fileURLRequired
         }

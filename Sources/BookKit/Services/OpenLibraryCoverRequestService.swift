@@ -7,16 +7,16 @@
 
 import Foundation
 
-class OpenLibraryCoverRequestService {
+public class OpenLibraryCoverRequestService {
     var imageSize: ImageSize
 
-    enum ImageSize: String {
+    public enum ImageSize: String {
         case small = "S"
         case medium = "M"
         case large = "L"
     }
 
-    init(imageSize: ImageSize = .medium) {
+    public init(imageSize: ImageSize = .medium) {
         self.imageSize = imageSize
     }
 }
@@ -24,7 +24,7 @@ class OpenLibraryCoverRequestService {
 extension OpenLibraryCoverRequestService: CoverRequestService {
     private static let coversAPI = "https://covers.openlibrary.org/b/isbn/"
 
-    func getCoverURL(bookId: String) throws -> URL {
+    public func getCoverURL(bookId: String) throws -> URL {
         guard !bookId.isEmpty else {
             throw CoverRequestError.emptyBookId
         }

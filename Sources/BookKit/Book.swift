@@ -7,34 +7,34 @@
 
 import Foundation
 
-class Book: Identifiable {
-    private(set) var id: String
-    private(set) var title: String
-    private(set) var author: String
+open class Book: Identifiable, Codable {
+    public var id: String
+    public var title: String
+    public var author: String
 
-    var additionalAuthors: String?
-    var isbn: String?
-    var isbn13: String?
-    var publisher: String?
-    var binding: String?
-    var pages: String?
-    var published: String?
-    var firstPublished: String?
-    var rating: String?
-    var review: String?
-    var readCount: String?
+    public var additionalAuthors: String?
+    public var isbn: String?
+    public var isbn13: String?
+    public var publisher: String?
+    public var binding: String?
+    public var pages: String?
+    public var published: String?
+    public var firstPublished: String?
+    public var rating: String?
+    public var review: String?
+    public var readCount: String?
 
-    var dateRead: Date?
-    var tags: [String]?
-    var status: Status?
+    public var dateRead: Date?
+    public var tags: [String]?
+    public var status: Status?
 
-    enum Status {
+    public enum Status: String, CaseIterable, Codable {
         case WantToRead
         case CurrentlyReading
         case Read
     }
 
-    required init(
+    public required init(
         id: String,
         title: String,
         author: String,
@@ -71,15 +71,7 @@ class Book: Identifiable {
         self.tags = tags
         self.status = status
     }
-}
 
-extension Book: Equatable {
-    public static func == (lhs: Book, rhs: Book) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-extension Book {
     public static var allOptionalAttributes: [PartialKeyPath<Book>] {
         [
             \.additionalAuthors,
@@ -97,5 +89,11 @@ extension Book {
             \.tags,
             \.status
         ]
+    }
+}
+
+extension Book: Equatable {
+    public static func == (lhs: Book, rhs: Book) -> Bool {
+        lhs.id == rhs.id
     }
 }

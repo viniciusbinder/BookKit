@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum BookImportError: Error {
+public enum BookImportError: Error {
     case fileURLRequired
     case missingRequiredFields
 }
 
-protocol BookImportService {
+public protocol BookImportService {
     func importBooks(fileURL: URL?, attributesToInclude: [PartialKeyPath<Book>]) throws -> [Book]
 }
