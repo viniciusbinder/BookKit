@@ -28,3 +28,6 @@ let coverURL = try coverService.getCoverURL(bookId: bookId)
 
 ## License
 BookKit is available under the MIT license. See LICENSE for more information.
+
+## Swift Package Index
+Available through SPI: [https://swiftpackageindex.com/viniciusbinder/BookKit](https://swiftpackageindex.com/viniciusbinder/BookKit).
