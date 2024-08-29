@@ -1,4 +1,11 @@
 # BookKit
+
+<p>
+    <img src="https://img.shields.io/badge/Swift-5.10-fd5e1e" />
+    <img src="https://img.shields.io/badge/iOS-17+-fd5e1e" />
+    <img src="https://img.shields.io/badge/macOS-14+-fd5e1e" />
+</p>
+
 BookKit is a concise Swift package that offers a `Book` entity for out-of-the-box or DTO usage, and protocols for implementing services to import library data and retrieve book covers. Included are two service implementations for importing library data from _Goodreads_ and requesting covers from the _OpenLibrary_ API.
 
 ## Usage
