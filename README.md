@@ -1,9 +1,9 @@
 # BookKit
-BookKit is a concise Swift package that offers a `Book` entity for out-of-the-box or DTO usage, and protocols for implementing services to import library data and retrieve book covers. Included are two implementations of these protocols that support importing from _Goodreads_ and requesting covers from the _OpenLibrary_ API.
+BookKit is a concise Swift package that offers a `Book` entity for out-of-the-box or DTO usage, and protocols for implementing services to import library data and retrieve book covers. Included are two service implementations for importing library data from _Goodreads_ and requesting covers from the _OpenLibrary_ API.
 
-## Using BookKit
+## Usage
 
-BookKit has two main protocols: `BookImportService` and `CoverRequestService`. Below are the two included implementations.
+BookKit has two main protocols: `BookImportService` and `CoverRequestService`. Below are the two included service implementations with these protocols and how to use them in your app.
 
 #### Importing Book Data
 Using the `BookImportManager` along with a `BookImportService` implementation that integrates with Goodreads.
